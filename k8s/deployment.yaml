@@ -19,5 +19,26 @@ spec:
           ports:
             - containerPort: 5000
           env:
+            - name: DATABASE_URL
+              value: postgresql://todouser:strongpassword123@postgres:5432/todo
             - name: DEBUG
               value: "False"
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
