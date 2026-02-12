@@ -4,6 +4,7 @@ metadata:
   name: postgres-pvc
   namespace: todo-prod
 spec:
+  storageClassName: local-path
   accessModes:
     - ReadWriteOnce
   resources:
