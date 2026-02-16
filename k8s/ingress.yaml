@@ -3,16 +3,22 @@ kind: Ingress
 metadata:
   name: todo-ingress
   namespace: todo-prod
+  annotations:
+    cert-manager.io/cluster-issuer: selfsigned-issuer
 spec:
   ingressClassName: contour
+  tls:
+  - hosts:
+    - todo.local
+    secretName: todo-tls
   rules:
-    - host: todo.local
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: todo-service
-                port:
-                  number: 80
+  - host: todo.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: todo-service
+            port:
+              number: 80
