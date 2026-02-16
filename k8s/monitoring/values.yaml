@@ -1,4 +1,4 @@
 prometheus-node-exporter:
-  hostPort: false
+  hostNetwork: false
   service:
     port: 9101
