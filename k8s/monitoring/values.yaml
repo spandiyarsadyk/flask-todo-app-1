@@ -2,3 +2,17 @@ prometheus-node-exporter:
   hostNetwork: false
   service:
     port: 9101
+prometheus:
+  prometheusSpec:
+    resources:
+      requests:
+        memory: 512Mi
+      limits:
+        memory: 1Gi
+    retention: 2d
+grafana:
+  resources:
+    requests:
+      memory: 128Mi
+    limits:
+      memory: 256Mi
