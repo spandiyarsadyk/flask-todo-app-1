@@ -1,0 +1,4 @@
+prometheus-node-exporter:
+  hostPort: false
+  service:
+    port: 9101
