@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: todo-app
-          image: sadykspandiyar/todo-app:1.0
+          image: sadykspandiyar/flask-todo-app-1:154be16b858fab9c2fe673f68fd12de1c1f0a007
           ports:
             - containerPort: 5000
           env:
