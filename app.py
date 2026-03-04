@@ -8,9 +8,8 @@ app.config["DEBUG"] = os.getenv("DEBUG") == "True"
 
 @app.route("/")
 def home():
-    return f"Environment: {'DEV' if app.config['DEBUG'] else 'PROD'} 🚀"
+    return "Todo App v2 🚀"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
 
-return "Todo App v2 🚀"
