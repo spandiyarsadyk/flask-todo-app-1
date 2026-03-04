@@ -8,9 +8,7 @@ app.config["DEBUG"] = os.getenv("DEBUG") == "True"
 
 @app.route("/")
 def home():
-    return "Todo App v2 🚀"
+    return unknown_variable
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
-
-return "Todo App v2 🚀"
